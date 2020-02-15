@@ -17,13 +17,19 @@ Route::group([
     });
 });
 
-Route::post('/users', 'UserController@store');
+/*
+ * Apenas um outro jeito de representar, achei interessante colocar
 
 Route::group([
     'middleware' => ['auth:api']
 ], function() {
-    
+    Route::get('/users', 'UserController@index');
+    Route::get('/users/{id}', 'UserController@show');
+    Route::patch('/users/{id}', 'UserController@update');
+    Route::delete('/users/{id}', 'UserController@destroy');
 });
+
+*/
 
 Route::group([
     'prefix' => 'auth'
