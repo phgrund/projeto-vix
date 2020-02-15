@@ -19,7 +19,7 @@ Route::group([
     'prefix' => 'users'
 ], function() {
     Route::post('/', 'UserController@store');
-    
+
     Route::group([
         'middleware' => ['auth:api']
     ], function () {
@@ -37,5 +37,5 @@ Route::group([
 ], function () {
     Route::post('login', 'AuthController@login');
     Route::post('logout', 'AuthController@logout');
-    Route::post('me', 'AuthController@me');
+    Route::get('me', 'AuthController@me');
 });
