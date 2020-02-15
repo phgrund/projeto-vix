@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 
-Route::post('/', 'UserController@store');
+Route::post('/users', 'UserController@store');
 Route::group([
     'middleware' => ['auth:api']
 ], function() {
