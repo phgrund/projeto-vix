@@ -51,7 +51,7 @@ class UserController extends Controller
             return response()->json(['error' => 'Provided invalid data'], 400);
         }
 
-        $user->save($request->all());
+        $user->update($request->all());
 
         return response()->json($user);
     }
