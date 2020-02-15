@@ -2,6 +2,19 @@
 
 use Illuminate\Http\Request;
 
+Route::post('/', 'UserController@store');
+Route::group([
+    'middleware' => ['auth:api']
+], function() {
+    Route::get('/users', 'UserController@index');
+    Route::get('/users/{id}', 'UserController@show');
+    Route::patch('/users/{id}', 'UserController@update');
+    Route::delete('/users/{id}', 'UserController@destroy');
+});
+
+/*
+ * Apenas um outro jeito de representar, achei interessante colocar
+
 Route::group([
     'prefix' => 'users'
 ], function() {
@@ -15,18 +28,6 @@ Route::group([
         Route::patch('/{id}', 'UserController@update');
         Route::delete('/{id}', 'UserController@destroy');
     });
-});
-
-/*
- * Apenas um outro jeito de representar, achei interessante colocar
-
-Route::group([
-    'middleware' => ['auth:api']
-], function() {
-    Route::get('/users', 'UserController@index');
-    Route::get('/users/{id}', 'UserController@show');
-    Route::patch('/users/{id}', 'UserController@update');
-    Route::delete('/users/{id}', 'UserController@destroy');
 });
 
 */
