@@ -62,6 +62,7 @@
 
   li {
     float: left;
+    text-align: center;
   }
 
   a {

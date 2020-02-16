@@ -12548,7 +12548,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nnav[data-v-6dde423b] {\n  width: 100%;\n}\nul[data-v-6dde423b] {\n  overflow: hidden;\n  background-color: #282828;\n  list-style-type: none;\n}\nli[data-v-6dde423b] {\n  float: left;\n}\na[data-v-6dde423b] {\n  display: block;\n  color: #fff;\n  font-size: 20px;\n  text-decoration: none;\n  padding: 14px 16px;\n  transition: 0.3s all;\n}\na[data-v-6dde423b]:hover {\n  background-color: rgba(255, 255, 255, 0.2);\n}\n\n", ""]);
+exports.push([module.i, "\nnav[data-v-6dde423b] {\n  width: 100%;\n}\nul[data-v-6dde423b] {\n  overflow: hidden;\n  background-color: #282828;\n  list-style-type: none;\n}\nli[data-v-6dde423b] {\n  float: left;\n  text-align: center;\n}\na[data-v-6dde423b] {\n  display: block;\n  color: #fff;\n  font-size: 20px;\n  text-decoration: none;\n  padding: 14px 16px;\n  transition: 0.3s all;\n}\na[data-v-6dde423b]:hover {\n  background-color: rgba(255, 255, 255, 0.2);\n}\n\n", ""]);
 
 // exports
 
@@ -12605,7 +12605,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nmain[data-v-3c9e9bf4] {\n  text-align: center;\n}\n.add-user[data-v-3c9e9bf4] {\n  margin-bottom: 15px;\n}\n\n", ""]);
+exports.push([module.i, "\n.user-list[data-v-3c9e9bf4] {\n  text-align: center;\n  max-width: 100%;\n  overflow-x:auto;\n}\n.add-user[data-v-3c9e9bf4] {\n  margin-bottom: 15px;\n}\n\n", ""]);
 
 // exports
 

@@ -24,8 +24,10 @@
 
 <style scoped>
 
-  main {
+  .user-list {
     text-align: center;
+    max-width: 100%;
+    overflow-x:auto;
   }
 
   .add-user {
