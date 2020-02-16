@@ -70,7 +70,7 @@ class UserController extends Controller
 
     protected function validateStoreUser($data) {
         $validator = Validator::make(request()->all(), [
-            'name' => 'required|min:3|max:20',
+            'name' => 'required|min:3',
             'email' => 'required|email',
             'password' => 'required|min:3',
             'cpf' => 'required|regex:/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/'
@@ -81,7 +81,7 @@ class UserController extends Controller
 
     protected function validateUpdateUser($data) {
         $validator = Validator::make(request()->all(), [
-            'name' => 'required|min:3|max:20',
+            'name' => 'required|min:3',
             'email' => 'required|email',
             'password' => 'min:3',
             'cpf' => 'required|regex:/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/'
