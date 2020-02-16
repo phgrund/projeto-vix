@@ -1,17 +1,49 @@
 <template>
-  <div class="contain">
-    <h1>Dashboard</h1>
+  <div class="app">
+    <Navbar />
+    <div class="container">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
-export default {
 
+import { mapGetters } from 'vuex';
+import api from '../services/api';
+
+import Navbar from '../components/Navbar';
+
+export default {
+  name: 'Dashboard',
+
+  components: {
+    Navbar
+  },
+
+  data() {
+    return {
+      users: []
+    }
+  },
+
+  methods: {
+    async getUsers() {
+      const res = await api.get('/users');
+
+      this.users = res.data;
+    }
+  },
+
+  mounted() {
+    this.getUsers();
+  }
 }
+
 </script>
 
 <style scoped>
   .container {
-    background-color: #ddd;
+    padding: 20px;
   }
 </style>
