@@ -1,38 +1,32 @@
 <template>
-  <form @submit.prevent="submit">
-    <div class="input-block">
-      <label for="name">Nome</label>
-      <input type="text" id="name" class="form-input" v-model="form.name">
+  <main class="user-create">
+    <ButtonVoltar />
+
+    <div class="create-form">
+      <UserForm title="Cadastrar usuário" :form="this.user" @submit="submit" />
     </div>
-    <div class="input-block">
-      <label for="email">Email</label>
-      <input type="email" id="email" class="form-input" v-model="form.email">
-    </div>
-    <div class="input-block">
-      <label for="password">Senha</label>
-      <input type="password" id="password" class="form-input" v-model="form.password">
-    </div>
-    <div class="input-block">
-      <label for="cpf">CPF</label>
-      <input type="text" id="cpf" class="form-input" v-model="form.cpf">
-    </div>
-    <div class="submit-block">
-      <span class="error-message">{{ error }}</span>
-      <button type="submit" class="submit-button">Salvar alterações</button>
-    </div>
-  </form>
+
+  </main>
 </template>
 
 <script>
 
   import api from '../services/api';
 
+  import UserForm from './UserForm';
+  import ButtonVoltar from './ButtonVoltar';
+
   export default {
     name: 'UserCreate',
 
+    components: {
+      UserForm,
+      ButtonVoltar
+    },
+
     data() {
       return {
-        form: {
+        user: {
           name: '',
           email: '',
           password: '',
@@ -43,10 +37,15 @@
     },
 
     methods: {
-      async submit() {
-        const res = await api.post('/users', this.form);
-
-        console.log(res);
+      async submit(data) {
+        try {
+          const res = await api.post('/users', data);
+          this.$router.replace({
+            name: 'userList'
+          });
+        } catch(e) {
+          console.error(e);
+        }
       }
     },
   }
@@ -55,6 +54,10 @@
 
 <style>
 
-
+  .create-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 </style>

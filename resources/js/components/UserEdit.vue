@@ -1,37 +1,27 @@
 <template>
   <main class="user-edit">
-    <h2>Atualizar usuário</h2>
+    <ButtonVoltar />
 
-    <form @submit.prevent="submit">
-      <div class="input-block">
-        <label for="login">Nome</label>
-        <input type="text" id="login" class="form-input" v-model="user.name">
-      </div>
-      <div class="input-block">
-        <label for="email">Email</label>
-        <input type="text" id="email" class="form-input" v-model="user.email">
-      </div>
-      <div class="input-block">
-        <label for="password">Senha</label>
-        <input type="text" id="password" class="form-input" v-model="user.password">
-      </div>
-      <div class="input-block">
-        <label for="cpf">CPF</label>
-        <input type="text" id="cpf" class="form-input" v-model="user.cpf">
-      </div>
-      <div class="submit-block">
-        <span class="error-message">{{ error }}</span>
-        <button type="submit" class="submit-button">Salvar alterações</button>
-      </div>
-    </form>
+    <div class="edit-form">
+      <UserForm title="Atualizar usuário" :form="this.user" @submit="submit" />
+    </div>
+
   </main>
 </template>
 
 <script>
   import api from '../services/api';
 
+  import UserForm from './UserForm';
+  import ButtonVoltar from './ButtonVoltar.vue';
+
   export default {
     name: 'UserEdit',
+
+    components: {
+      UserForm,
+      ButtonVoltar
+    },
 
     data() {
       return {
@@ -40,8 +30,7 @@
           email: '',
           password: '',
           cpf: ''
-        },
-        error: ''
+        }
       }
     },
 
@@ -52,16 +41,15 @@
         this.user = res.data;
       },
 
-      async submit() {
-        const res = await api.patch(`/users/${this.$route.params.id}`, this.user);
-
-        if(res.status == 200) {
+      async submit(data) {
+        try {
+          const res = await api.patch(`/users/${this.$route.params.id}`, data);
           this.$router.replace({
             name: 'userList'
-          })
+          });
+        } catch(e) {
+          console.error(e);
         }
-
-        console.log(res);
       }
     },
 
@@ -72,5 +60,11 @@
 </script>
 
 <style>
+
+  .edit-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 </style>
