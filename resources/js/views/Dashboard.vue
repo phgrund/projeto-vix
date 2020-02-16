@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="dashboard">
     <Navbar />
     <div class="container">
       <router-view />
@@ -46,4 +46,5 @@ export default {
   .container {
     padding: 20px;
   }
+
 </style>

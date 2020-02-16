@@ -2,7 +2,7 @@ require('./bootstrap');
 
 import Vue from 'vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPencilAlt, faTrash, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPencilAlt, faTrash, faPlus, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import router from './router';
@@ -14,7 +14,8 @@ require('./store/subscriber');
 library.add({
   faPencilAlt,
   faTrash,
-  faPlus
+  faPlus,
+  faArrowLeft
 });
 
 

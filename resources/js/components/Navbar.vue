@@ -52,23 +52,29 @@
 
   nav {
     width: 100%;
+  }
+
+  ul {
+    overflow: hidden;
     background-color: #282828;
+    list-style-type: none;
   }
 
   li {
-    display: inline-block;
-    padding: 15px 10px;
-    transition: 0.5s all;
-  }
-
-  li:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    float: left;
   }
 
   a {
+    display: block;
     color: #fff;
     font-size: 20px;
     text-decoration: none;
+    padding: 14px 16px;
+    transition: 0.3s all;
+  }
+
+  a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
   }
 
 </style>
