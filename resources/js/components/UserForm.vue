@@ -5,22 +5,22 @@
 
     <div class="input-block">
       <label for="name">Nome</label>
-      <input type="text" id="name" class="form-input" v-model="form.name" autocomplete="off">
+      <input type="text" id="name" class="form-input" v-model="form.name" placeholder="Ex: Paulo">
     </div>
 
     <div class="input-block">
       <label for="email">Email</label>
-      <input type="email" id="email" class="form-input" v-model="form.email" autocomplete="off">
+      <input type="email" id="email" class="form-input" v-model="form.email" placeholder="Ex: ph@web.com">
     </div>
 
     <div class="input-block">
       <label for="password">Senha</label>
-      <input type="password" id="password" class="form-input" v-model="form.password" autocomplete="off">
+      <input type="password" id="password" class="form-input" v-model="form.password" placeholder="Ex: 123">
     </div>
 
     <div class="input-block">
       <label for="cpf">CPF</label>
-      <input type="text" id="cpf" class="form-input" v-model="form.cpf" autocomplete="off">
+      <input type="text" id="cpf" class="form-input" v-model="form.cpf" placeholder="Ex: 123.456.789-10">
     </div>
 
     <div class="submit-block">

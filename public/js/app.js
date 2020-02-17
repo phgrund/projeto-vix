@@ -12378,10 +12378,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 2:
                 res = _context.sent;
-                console.log(res);
                 _this.users = res.data;
 
-              case 5:
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -32249,7 +32248,7 @@ var render = function() {
             }
           ],
           staticClass: "form-input",
-          attrs: { type: "text", id: "name", autocomplete: "off" },
+          attrs: { type: "text", id: "name", placeholder: "Ex: Paulo" },
           domProps: { value: _vm.form.name },
           on: {
             input: function($event) {
@@ -32275,7 +32274,7 @@ var render = function() {
             }
           ],
           staticClass: "form-input",
-          attrs: { type: "email", id: "email", autocomplete: "off" },
+          attrs: { type: "email", id: "email", placeholder: "Ex: ph@web.com" },
           domProps: { value: _vm.form.email },
           on: {
             input: function($event) {
@@ -32301,7 +32300,7 @@ var render = function() {
             }
           ],
           staticClass: "form-input",
-          attrs: { type: "password", id: "password", autocomplete: "off" },
+          attrs: { type: "password", id: "password", placeholder: "Ex: 123" },
           domProps: { value: _vm.form.password },
           on: {
             input: function($event) {
@@ -32327,7 +32326,7 @@ var render = function() {
             }
           ],
           staticClass: "form-input",
-          attrs: { type: "text", id: "cpf", autocomplete: "off" },
+          attrs: { type: "text", id: "cpf", placeholder: "Ex: 123.456.789-10" },
           domProps: { value: _vm.form.cpf },
           on: {
             input: function($event) {
