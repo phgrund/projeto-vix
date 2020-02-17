@@ -3,7 +3,7 @@
     <ButtonVoltar />
 
     <div class="edit-form">
-      <UserForm title="Atualizar usuário" :form="this.user" @submit="submit" />
+      <UserForm title="Atualizar usuário" :form="this.user" :error="error" @submit="submit" />
     </div>
 
   </main>
@@ -30,7 +30,8 @@
           email: '',
           password: '',
           cpf: ''
-        }
+        },
+        error: ''
       }
     },
 
@@ -43,12 +44,13 @@
 
       async submit(data) {
         try {
+          this.error = ''
           const res = await api.patch(`/users/${this.$route.params.id}`, data);
           this.$router.replace({
             name: 'userList'
           });
         } catch(e) {
-          console.error(e);
+          this.error = 'Erro ao atualizar'
         }
       }
     },

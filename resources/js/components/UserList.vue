@@ -9,6 +9,8 @@
 
 <script>
 
+  import { mapGetters } from 'vuex';
+
   import UsersTable from './UsersTable';
   import ButtonCadastrar from './ButtonCadastrar.vue';
 
@@ -18,6 +20,12 @@
     components: {
       UsersTable,
       ButtonCadastrar
+    },
+
+    computed: {
+      ...mapGetters({
+        user: 'auth/user'
+      })
     }
   }
 </script>

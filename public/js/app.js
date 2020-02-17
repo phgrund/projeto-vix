@@ -11783,11 +11783,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Navbar',
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])({
+    user: 'auth/user'
+  })),
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
     logoutAction: 'auth/logout'
   }), {
@@ -11884,30 +11894,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.prev = 0;
-                _context.next = 3;
+                _this.error = '';
+                _context.next = 4;
                 return _services_api__WEBPACK_IMPORTED_MODULE_1__["default"].post('/users', data);
 
-              case 3:
+              case 4:
                 res = _context.sent;
 
                 _this.$router.replace({
                   name: 'userList'
                 });
 
-                _context.next = 10;
+                _context.next = 11;
                 break;
 
-              case 7:
-                _context.prev = 7;
+              case 8:
+                _context.prev = 8;
                 _context.t0 = _context["catch"](0);
-                console.error(_context.t0);
+                _this.error = 'Erro ao cadastrar.';
 
-              case 10:
+              case 11:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 7]]);
+        }, _callee, null, [[0, 8]]);
       }))();
     }
   }
@@ -11962,7 +11973,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         email: '',
         password: '',
         cpf: ''
-      }
+      },
+      error: ''
     };
   },
   methods: {
@@ -12004,30 +12016,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.prev = 0;
-                _context2.next = 3;
+                _this2.error = '';
+                _context2.next = 4;
                 return _services_api__WEBPACK_IMPORTED_MODULE_1__["default"].patch("/users/".concat(_this2.$route.params.id), data);
 
-              case 3:
+              case 4:
                 res = _context2.sent;
 
                 _this2.$router.replace({
                   name: 'userList'
                 });
 
-                _context2.next = 10;
+                _context2.next = 11;
                 break;
 
-              case 7:
-                _context2.prev = 7;
+              case 8:
+                _context2.prev = 8;
                 _context2.t0 = _context2["catch"](0);
-                console.error(_context2.t0);
+                _this2.error = 'Erro ao atualizar';
 
-              case 10:
+              case 11:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, null, [[0, 7]]);
+        }, _callee2, null, [[0, 8]]);
       }))();
     }
   },
@@ -12081,11 +12094,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'UserForm',
-  data: function data() {
-    return {
-      error: ''
-    };
-  },
   props: {
     form: {
       name: '',
@@ -12093,7 +12101,8 @@ __webpack_require__.r(__webpack_exports__);
       password: '',
       cpf: ''
     },
-    title: ''
+    title: '',
+    error: ''
   },
   methods: {
     submit: function submit() {
@@ -12114,39 +12123,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _UsersTable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UsersTable */ "./resources/js/components/UsersTable.vue");
-/* harmony import */ var _ButtonCadastrar_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ButtonCadastrar.vue */ "./resources/js/components/ButtonCadastrar.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'UserList',
-  components: {
-    UsersTable: _UsersTable__WEBPACK_IMPORTED_MODULE_0__["default"],
-    ButtonCadastrar: _ButtonCadastrar_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/UserProfile.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/UserProfile.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _UsersTable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UsersTable */ "./resources/js/components/UsersTable.vue");
+/* harmony import */ var _ButtonCadastrar_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ButtonCadastrar.vue */ "./resources/js/components/ButtonCadastrar.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -12162,6 +12141,41 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'UserList',
+  components: {
+    UsersTable: _UsersTable__WEBPACK_IMPORTED_MODULE_1__["default"],
+    ButtonCadastrar: _ButtonCadastrar_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
+    user: 'auth/user'
+  }))
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/UserProfile.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/UserProfile.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -12173,10 +12187,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'UserProfile',
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
-    user: 'auth/user'
-  }))
+  name: 'UserProfile'
 });
 
 /***/ }),
@@ -12548,7 +12559,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nnav[data-v-6dde423b] {\n  width: 100%;\n}\nul[data-v-6dde423b] {\n  overflow: hidden;\n  background-color: #282828;\n  list-style-type: none;\n}\nli[data-v-6dde423b] {\n  float: left;\n  text-align: center;\n}\na[data-v-6dde423b] {\n  display: block;\n  color: #fff;\n  font-size: 20px;\n  text-decoration: none;\n  padding: 14px 16px;\n  transition: 0.3s all;\n}\na[data-v-6dde423b]:hover {\n  background-color: rgba(255, 255, 255, 0.2);\n}\n\n", ""]);
+exports.push([module.i, "\nnav[data-v-6dde423b] {\n  width: 100%;\n}\nul[data-v-6dde423b] {\n  overflow: hidden;\n  background-color: #282828;\n  list-style-type: none;\n}\nli[data-v-6dde423b] {\n  float: left;\n  text-align: center;\n}\n.right-links[data-v-6dde423b] {\n  float: right !important;\n}\na[data-v-6dde423b] {\n  display: block;\n  color: #fff;\n  font-size: 20px;\n  text-decoration: none;\n  padding: 14px 16px;\n  transition: 0.3s all;\n}\na[data-v-6dde423b]:hover {\n  background-color: rgba(255, 255, 255, 0.2);\n}\n\n", ""]);
 
 // exports
 
@@ -32060,20 +32071,28 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("li", [
-        _c(
-          "a",
-          {
-            attrs: { href: "#" },
-            on: {
-              click: function($event) {
-                $event.preventDefault()
-                return _vm.logout($event)
+      _c("div", { staticClass: "right-links" }, [
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [
+            _vm._v("\n          " + _vm._s(_vm.user.name) + "\n        ")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.logout($event)
+                }
               }
-            }
-          },
-          [_vm._v("Sair")]
-        )
+            },
+            [_vm._v("Sair")]
+          )
+        ])
       ])
     ])
   ])
@@ -32111,7 +32130,11 @@ var render = function() {
         { staticClass: "create-form" },
         [
           _c("UserForm", {
-            attrs: { title: "Cadastrar usuário", form: this.user },
+            attrs: {
+              title: "Cadastrar usuário",
+              form: this.user,
+              error: _vm.error
+            },
             on: { submit: _vm.submit }
           })
         ],
@@ -32154,7 +32177,11 @@ var render = function() {
         { staticClass: "edit-form" },
         [
           _c("UserForm", {
-            attrs: { title: "Atualizar usuário", form: this.user },
+            attrs: {
+              title: "Atualizar usuário",
+              form: this.user,
+              error: _vm.error
+            },
             on: { submit: _vm.submit }
           })
         ],

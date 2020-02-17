@@ -35,12 +35,6 @@
   export default {
     name: 'UserForm',
 
-    data() {
-      return {
-        error: ''
-      }
-    },
-
     props: {
       form: {
         name: '',
@@ -48,7 +42,8 @@
         password: '',
         cpf: ''
       },
-      title: ''
+      title: '',
+      error: ''
     },
 
     methods: {

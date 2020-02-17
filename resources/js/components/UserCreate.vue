@@ -3,7 +3,7 @@
     <ButtonVoltar />
 
     <div class="create-form">
-      <UserForm title="Cadastrar usuário" :form="this.user" @submit="submit" />
+      <UserForm title="Cadastrar usuário" :form="this.user" :error="error" @submit="submit" />
     </div>
 
   </main>
@@ -39,12 +39,13 @@
     methods: {
       async submit(data) {
         try {
+          this.error = ''
           const res = await api.post('/users', data);
           this.$router.replace({
             name: 'userList'
           });
         } catch(e) {
-          console.error(e);
+          this.error = 'Erro ao cadastrar.'
         }
       }
     },

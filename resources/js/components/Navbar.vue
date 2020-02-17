@@ -15,21 +15,34 @@
           Usuários
         </router-link>
       </li>
-      <li>
-        <a href="#" @click.prevent="logout">Sair</a>
-      </li>
+      <div class="right-links">
+        <li>
+          <a href="#">
+            {{ user.name }}
+          </a>
+        </li>
+        <li>
+          <a href="#" @click.prevent="logout">Sair</a>
+        </li>
+      </div>
     </ul>
   </nav>
 </template>
 
 <script>
 
-  import { mapActions } from 'vuex';
+  import { mapActions, mapGetters } from 'vuex';
   import api from '../services/api';
   import router from '../router';
 
   export default {
     name: 'Navbar',
+
+    computed: {
+      ...mapGetters({
+        user: 'auth/user'
+      })
+    },
 
     methods: {
       ...mapActions({
@@ -63,6 +76,10 @@
   li {
     float: left;
     text-align: center;
+  }
+
+  .right-links {
+    float: right !important;
   }
 
   a {
