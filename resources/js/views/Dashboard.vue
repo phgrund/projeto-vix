@@ -31,6 +31,8 @@ export default {
     async getUsers() {
       const res = await api.get('/users');
 
+      console.log(res);
+
       this.users = res.data;
     }
   },

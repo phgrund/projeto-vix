@@ -21,7 +21,13 @@
 import { mapGetters } from 'vuex';
 
 export default {
-  name: 'UserProfile'
+  name: 'UserProfile',
+
+  computed: {
+    ...mapGetters({
+      user: 'auth/user'
+    })
+  }
 }
 
 </script>
